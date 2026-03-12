@@ -1,4 +1,4 @@
-import { BookOpen, Phone, Mail, User } from "lucide-react";
+import { BookOpen, Phone, Mail, User, Shield, Monitor, BookCopy, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import authorImg from "@/assets/author.png";
@@ -53,11 +53,21 @@ const Index = () => {
               <p className="mt-2 font-display text-xl text-muted-foreground sm:text-2xl">
                 Learn Digital Skills. Master. Monetize. Earn.
               </p>
-              <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
-                A comprehensive guide by Emmanuel Ndunda for anyone ready to build a sustainable
-                future through digital skills — regardless of age, background, or education. Learn
-                freelancing, graphic design, web development, data entry, and much more.
+              <p className="mt-2 text-base text-muted-foreground">
+                By <span className="font-semibold text-primary">Emmanuel Ndunda</span>
               </p>
+
+              {/* Features */}
+              <div className="mt-6 flex flex-wrap justify-center gap-4 lg:justify-start">
+                <div className="flex items-center gap-2 rounded-lg border border-border bg-card/60 px-4 py-2">
+                  <Shield className="h-4 w-4 text-primary" />
+                  <span className="text-sm text-muted-foreground">Secure Reading</span>
+                </div>
+                <div className="flex items-center gap-2 rounded-lg border border-border bg-card/60 px-4 py-2">
+                  <Monitor className="h-4 w-4 text-primary" />
+                  <span className="text-sm text-muted-foreground">Read Online Only</span>
+                </div>
+              </div>
 
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:items-start">
                 <Link to="/read">
@@ -79,12 +89,68 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="border-t border-border py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-12 text-center">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
+              Get Your Copy
+            </p>
+            <h3 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
+              Choose Your Format
+            </h3>
+          </div>
+
+          <div className="mx-auto grid max-w-3xl gap-8 sm:grid-cols-2">
+            {/* Hard Copy */}
+            <div className="flex flex-col items-center rounded-2xl border border-border bg-card/60 p-8 text-center shadow-card backdrop-blur-sm transition-transform hover:scale-[1.02]">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                <BookCopy className="h-7 w-7 text-primary" />
+              </div>
+              <h4 className="font-display text-xl font-bold text-foreground">Hard Copy</h4>
+              <p className="mt-1 text-3xl font-bold text-primary">KSh 1,500</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Physical book delivered to you
+              </p>
+              <a
+                href="tel:0769722940"
+                className="mt-6 w-full"
+              >
+                <Button className="gold-gradient w-full font-semibold text-primary-foreground shadow-gold hover:opacity-90">
+                  Order Hard Copy
+                </Button>
+              </a>
+            </div>
+
+            {/* Soft Copy */}
+            <div className="flex flex-col items-center rounded-2xl border border-border bg-card/60 p-8 text-center shadow-card backdrop-blur-sm transition-transform hover:scale-[1.02]">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                <FileText className="h-7 w-7 text-primary" />
+              </div>
+              <h4 className="font-display text-xl font-bold text-foreground">Soft Copy</h4>
+              <p className="mt-1 text-3xl font-bold text-primary">KSh 1,500</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Read online — link shared to you
+              </p>
+              <a
+                href="tel:0769722940"
+                className="mt-6 w-full"
+              >
+                <Button className="gold-gradient w-full font-semibold text-primary-foreground shadow-gold hover:opacity-90">
+                  Buy Soft Copy
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Author section */}
       <section className="border-t border-border py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
             <div className="shrink-0">
-              <div className="h-56 w-56 overflow-hidden rounded-2xl border-2 border-primary/30 shadow-gold">
+              <div className="w-64 overflow-hidden rounded-2xl border-2 border-primary/30 shadow-gold">
                 <img
                   src={authorImg}
                   alt="Emmanuel Ndunda — Author of Digital Wallet"
