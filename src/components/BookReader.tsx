@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, BookOpen } from "lucide-react";
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, BookOpen, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TOTAL_PAGES = 50;
