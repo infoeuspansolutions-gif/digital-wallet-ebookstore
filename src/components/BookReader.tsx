@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, BookOpen } from "lucide-react";
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, BookOpen, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TOTAL_PAGES = 50;
@@ -72,6 +72,27 @@ const BookReader = () => {
           <span className="text-xs text-muted-foreground">
             Page {currentPage} of {TOTAL_PAGES}
           </span>
+        </div>
+      </div>
+
+      {/* Promo banner */}
+      <div className="mx-auto max-w-4xl px-4 pt-6">
+        <div className="flex flex-col items-center gap-2 rounded-xl border border-primary/30 bg-card/80 px-6 py-4 text-center shadow-gold backdrop-blur-sm sm:flex-row sm:justify-between sm:text-left">
+          <div>
+            <p className="font-display text-sm font-bold text-primary sm:text-base">
+              📖 Digital Wallet — Now Available Online!
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
+              Soft Copy <span className="font-bold text-primary">KSh 1,500</span> — Call or M-Pesa to{" "}
+              <span className="font-semibold text-foreground">0769722940</span> and get it within a short time!
+            </p>
+          </div>
+          <a href="tel:0769722940" className="shrink-0">
+            <button className="gold-gradient inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold text-primary-foreground shadow-gold hover:opacity-90">
+              <Phone className="h-4 w-4" />
+              Call Now
+            </button>
+          </a>
         </div>
       </div>
 
